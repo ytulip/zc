@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<title>首页</title>
+<!--<link href="css/amazeui.css" rel="stylesheet"/>-->
+<link href="css/common.css" rel="stylesheet"/>
+<link href="css/weui.css" rel="stylesheet"/>
+<style>
+    .recommend-game{vertical-align: top;}
+    .recommend-game .game-info{width: 80%;text-align: center;}
+    .recommend-game .game-info img{width: 100%;}
+    /*.recommend-icon:nth-child(1){}*/
+    .recommend-game:nth-child(2) .game-info{margin-left: 5%}
+    .recommend-game:nth-child(3) .game-info{margin-left: 10%}
+    .recommend-game:nth-child(4) .game-info{margin-left: 15%}
+    .recommend-game:nth-child(5) .game-info{margin-left: 20%}
+
+    .user-panel{padding: 8px;}
+
+    .barrier{background-color: #fa9797;height: 40px;}
+
+    .center-cell{background-color: #f1f0f0;}
+    .sign-circle{width: 40px;height: 40px;border-radius: 40px;background-color: #5d5d5b;text-align: center;}
+    .sign-circle span{line-height: 40px !important;}
+    .short-line{width: 27px;border-bottom: 1px solid #f3cf51;margin-bottom: 20px;}
+    .anti-short-line{width: 27px;border-bottom: 1px solid #f3cf51;margin-top: 20px;}
+    .sign-circle-active{background-color:  #f3cf51;}
+</style>
+<body>
+<div class="barrier cus-row p-0-12 cus-row-v-m">
+    <div class="cus-row-col-2"><a href="javascript:history.go(-1);"><i class="back-icon"></i></a></div>
+    <div class="cus-row-col-8 t-al-c" style="line-height: 40px;"><span class="fs-16-fc-ffffff">账号绑定</span></div>
+    <div class="cus-row-col-2"></div>
+</div>
+
+<div class="weui-cells weui-cells_form">
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label">手机号</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" type="number" pattern="[0-9]*" placeholder="输入手机号">
+        </div>
+    </div>
+    <div class="weui-cell weui-cell_vcode">
+        <div class="weui-cell__hd">
+            <label class="weui-label">验证码</label>
+        </div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" type="tel" placeholder="输入验证码">
+        </div>
+        <div class="weui-cell__ft">
+            <button class="weui-vcode-btn">获取验证码</button>
+        </div>
+    </div>
+</div>
+<div class="t-al-c m-t-30"><a class="btn6">绑定手机号</a></div>
+
+
+
+
+<div class="weui-cells weui-cells_form">
+    <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label">账号</label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" type="number" pattern="[0-9]*" placeholder="输入账号">
+        </div>
+    </div>
+    <div class="weui-cell">
+        <div class="weui-cell__hd">
+            <label class="weui-label">密码</label>
+        </div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" type="password" placeholder="输入密码">
+        </div>
+    </div>
+
+    <div class="weui-cell">
+        <div class="weui-cell__hd">
+            <label class="weui-label">确认密码</label>
+        </div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" type="password" placeholder="确认密码">
+        </div>
+    </div>
+</div>
+<div class="t-al-c m-t-30"><a class="btn6">绑定账号</a></div>
+
+
+<footer class="fix-bottom">
+    <div class="in-bl-line">
+        <div class="in-bl-line-item tarbar tarbar-active" style="width: 25%">游戏</div>
+        <div class="in-bl-line-item tarbar" style="width: 25%">新服</div>
+        <div class="in-bl-line-item tarbar" style="width: 25%">礼包</div>
+        <div class="in-bl-line-item tarbar" style="width: 25%">个人中心</div>
+    </div>
+</footer>
+
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/amazeui.js"></script>
+<script>
+</script>
+</html>
