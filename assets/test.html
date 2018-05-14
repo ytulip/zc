@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<title>首页</title>
+<!--<link href="css/amazeui.css" rel="stylesheet"/>-->
+<link href="css/common.css" rel="stylesheet"/>
+<link href="css/weui.css" rel="stylesheet"/>
+<style>
+    .recommend-game{vertical-align: top;}
+    .recommend-game .game-info{width: 80%;text-align: center;}
+    .recommend-game .game-info img{width: 100%;}
+    /*.recommend-icon:nth-child(1){}*/
+    .recommend-game:nth-child(2) .game-info{margin-left: 5%}
+    .recommend-game:nth-child(3) .game-info{margin-left: 10%}
+    .recommend-game:nth-child(4) .game-info{margin-left: 15%}
+    .recommend-game:nth-child(5) .game-info{margin-left: 20%}
+
+    .user-panel{padding: 8px;}
+
+    .barrier{background-color: #fa9797;height: 40px;}
+
+    .center-cell{background-color: #f1f0f0;}
+    .sign-circle{width: 40px;height: 40px;border-radius: 40px;background-color: #5d5d5b;text-align: center;}
+    .sign-circle span{line-height: 40px !important;}
+    .short-line{width: 27px;border-bottom: 1px solid #f3cf51;margin-bottom: 20px;}
+    .anti-short-line{width: 27px;border-bottom: 1px solid #f3cf51;margin-top: 20px;}
+    .sign-circle-active{background-color:  #f3cf51;}
+</style>
+<body>
+<div class="user-panel" style="background-color: #fcbebe;">
+    <div class="cus-row cus-row-v-m">
+        <div class="cus-row-col-6">
+            <div class="in-bl-line">
+                <div class="in-bl-line-item in-bl-v-m" style="width: 52px;height: 52px;border-radius: 52px;background-color: #f85d5d;"></div>
+                <div class="in-bl-line-item in-bl-v-m p-0-12">
+                    <span class="fs-14-fc-212229">Alymer</span><span>VIP5</span><br/>
+                    <span class="fs-14-fc-212229">为币:</span><span>0</span>
+                </div>
+            </div>
+        </div>
+        <div class="cus-row-col-6 t-al-r">
+            <a class="btn4" href="javascript:doTest()">支付测试</a><br/>
+            <span class="fs-12-fc-212229">再签到10天可获得10个力币</span>
+        </div>
+    </div>
+</div>
+
+<div class="barrier">
+
+</div>
+
+<div class="weui-cells" style="margin-top: 0;">
+    <a class="weui-cell weui-cell_access center-cell" href="javascript:;">
+        <div class="weui-cell__bd">
+            <p>账号绑定</p>
+        </div>
+        <div class="weui-cell__ft">
+        </div>
+    </a>
+    <a class="weui-cell weui-cell_access center-cell" href="javascript:;">
+        <div class="weui-cell__bd">
+            <p>修改密码</p>
+        </div>
+        <div class="weui-cell__ft">
+        </div>
+    </a>
+    <a class="weui-cell weui-cell_access center-cell" href="javascript:;">
+        <div class="weui-cell__bd">
+            <p>关注有理</p>
+        </div>
+        <div class="weui-cell__ft">
+        </div>
+    </a>
+    <a class="weui-cell weui-cell_access center-cell" href="javascript:;">
+        <div class="weui-cell__bd">
+            <p>联系客服</p>
+        </div>
+        <div class="weui-cell__ft">
+        </div>
+    </a>
+</div>
+
+<footer class="fix-bottom">
+    <div class="in-bl-line">
+        <div class="in-bl-line-item tarbar tarbar-active" style="width: 25%">游戏</div>
+        <div class="in-bl-line-item tarbar" style="width: 25%">新服</div>
+        <div class="in-bl-line-item tarbar" style="width: 25%">礼包</div>
+        <div class="in-bl-line-item tarbar" style="width: 25%">个人中心</div>
+    </div>
+</footer>
+
+<!--关注有理-->
+<div class="layer d-p-n">
+    <div class="ab-t-t-x-y" style="padding: 12px;background: #f85d5d;border-radius: 4px;width: 270px;">
+        <div style="position: absolute;right:0;top: 0;"><a><img src="image/close.png" style="width: 20px;"/></a></div>
+        <h3 class="fs-16-fc-ffffff t-al-c">关注有礼</h3>
+        <p class="t-al-c fs-12-fc-ffffff m-t-10 m-b-10">微信号:haorenka</p>
+        <div class="t-al-c"><img src="image/wx.png" style="width: 40%;"/></div>
+        <div class="t-al-c"><a class="btn5 m-t-30">下载7193APP</a></div>
+    </div>
+</div>
+
+<!--客服信息-->
+<div class="layer d-p-n">
+    <div class="ab-t-t-x-y" style="padding: 12px;background: #f85d5d;border-radius: 4px;width: 270px;">
+        <div style="position: absolute;right:0;top: 0;"><a><img src="image/close.png" style="width: 20px;"/></a></div>
+        <h3 class="fs-16-fc-ffffff t-al-c">客服信息</h3>
+        <p class="t-al-c fs-14-fc-ffffff m-t-10 m-b-10">客服QQ:12345678</p>
+        <p class="t-al-c fs-14-fc-ffffff m-t-10 m-b-10">客服微信:haorenka</p>
+        <p class="t-al-c fs-14-fc-ffffff m-t-10 m-b-10">客服电话:400-800-8820</p>
+
+    </div>
+</div>
+
+<!--连续签到送VIP-->
+<div class="layer d-p-n">
+    <div class="ab-t-t-x-y" style="padding: 12px;background: #f85d5d;border-radius: 4px;width: 241px;">
+        <div style="position: absolute;right:0;top: 0;"><a><img src="image/close.png" style="width: 20px;"/></a></div>
+        <h3 class="fs-16-fc-ffffff t-al-c">连续签到送VIP</h3>
+
+        <div class="in-bl-line m-t-20">
+            <div class="in-bl-line-item t-al-c">
+                <span class="fs-12-fc-ffffff">第1天</span><br/>
+                <div class="sign-circle sign-circle-active">
+                    <span class="fs-12-fc-ffffff">10V</span>
+                </div>
+            </div>
+
+            <div class="in-bl-line-item in-bl-v-b">
+                <div class="short-line"></div>
+            </div>
+
+            <div class="in-bl-line-item t-al-c">
+                <span class="fs-12-fc-ffffff">第2天</span><br/>
+                <div class="sign-circle"><span class="fs-12-fc-ffffff">10V</span></div>
+            </div>
+
+            <div class="in-bl-line-item in-bl-v-b">
+                <div class="short-line"></div>
+            </div>
+
+            <div class="in-bl-line-item t-al-c">
+                <span class="fs-12-fc-ffffff">第3天</span><br/>
+                <div class="sign-circle"><span class="fs-12-fc-ffffff">10V</span></div>
+            </div>
+
+            <div class="in-bl-line-item in-bl-v-b">
+                <div class="short-line"></div>
+            </div>
+
+            <div class="in-bl-line-item t-al-c">
+                <span class="fs-12-fc-ffffff">第4天</span><br/>
+                <div class="sign-circle"><span class="fs-12-fc-ffffff">10V</span></div>
+            </div>
+        </div>
+
+        <div class="in-bl-line" style="height: 27px;">
+            <div class="in-bl-line-item" style="width: 50%">
+
+            </div>
+            <div class="in-bl-line-item t-al-r" style="width: 50%">
+                <div class="in-bl" style="height: 27px;border-left:1px solid #f3cf51;margin-right: 20px;"></div>
+            </div>
+        </div>
+
+        <div class="in-bl-line">
+            <div class="in-bl-line-item t-al-c">
+                <div class="" style="width: 40px;"></div>
+            </div>
+
+            <div class="in-bl-line-item in-bl-v-t">
+                <div class="" style="width: 27px;"></div>
+            </div>
+
+            <div class="in-bl-line-item t-al-c">
+                <div class="sign-circle"><span class="fs-12-fc-ffffff">10V</span></div>
+                <span class="fs-12-fc-ffffff">第7天</span>
+            </div>
+
+            <div class="in-bl-line-item in-bl-v-t">
+                <div class="anti-short-line"></div>
+            </div>
+
+            <div class="in-bl-line-item t-al-c">
+                <div class="sign-circle"><span class="fs-12-fc-ffffff">10V</span></div>
+                <span class="fs-12-fc-ffffff">第6天</span>
+            </div>
+
+            <div class="in-bl-line-item in-bl-v-t">
+                <div class="anti-short-line"></div>
+            </div>
+
+            <div class="in-bl-line-item t-al-c">
+                <div class="sign-circle"><span class="fs-12-fc-ffffff">10V</span></div>
+                <span class="fs-12-fc-ffffff">第5天</span>
+            </div>
+        </div>
+        <div class="t-al-c"><a class="btn5 m-t-30">VIP中心</a></div>
+    </div>
+</div>
+
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/amazeui.js"></script>
+<script>
+    function doTest() {
+        window.parent.postMessage('hello world', '*');    //在被嵌套的iframe的页面中写入这样一段代码
+    }
+</script>
+<script>
+</script>
+</html>

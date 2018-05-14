@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<title>首页</title>
+<!--<link href="css/amazeui.css" rel="stylesheet"/>-->
+<link href="css/common.css" rel="stylesheet"/>
+<link href="css/weui.css" rel="stylesheet"/>
+<style>
+    .recommend-game{vertical-align: top;}
+    .recommend-game .game-info{width: 80%;text-align: center;}
+    .recommend-game .game-info img{width: 100%;}
+    /*.recommend-icon:nth-child(1){}*/
+    .recommend-game:nth-child(2) .game-info{margin-left: 5%}
+    .recommend-game:nth-child(3) .game-info{margin-left: 10%}
+    .recommend-game:nth-child(4) .game-info{margin-left: 15%}
+    .recommend-game:nth-child(5) .game-info{margin-left: 20%}
+
+    .user-panel{padding: 8px;}
+
+    .barrier{background-color: #fa9797;height: 40px;}
+
+    .center-cell{background-color: #f1f0f0;}
+    .sign-circle{width: 40px;height: 40px;border-radius: 40px;background-color: #5d5d5b;text-align: center;}
+    .sign-circle span{line-height: 40px !important;}
+    .short-line{width: 27px;border-bottom: 1px solid #f3cf51;margin-bottom: 20px;}
+    .anti-short-line{width: 27px;border-bottom: 1px solid #f3cf51;margin-top: 20px;}
+    .sign-circle-active{background-color:  #f3cf51;}
+
+    .cd-popup-container-cost {
+        position: absolute;
+        width: 70%;
+        max-width: 320px;
+        margin: 0 auto;
+        top: 50%;
+        left: 50%;
+        height: auto;
+        background: #FFF;
+        border-radius: .4rem .4rem .4rem .4rem;
+        text-align: center;
+        -webkit-transform: translateY(-60px);
+        -moz-transform: translateY(-60px);
+        -ms-transform: translateY(-60px);
+        -o-transform: translateY(-60px);
+        transform: translateY(-60px);
+        -webkit-backface-visibility: hidden;
+        -webkit-transition-property: -webkit-transform;
+        -moz-transition-property: -moz-transform;
+        transition-property: transform;
+        -webkit-transition-duration: 0.3s;
+        -moz-transition-duration: 0.3s;
+        -ms-transition-duration: 0.3s;
+        -o-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -o-transform: translate(-50%,-50%);
+        -moz-transform: translate(-50%,-50%);
+        -webkit-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+    }
+
+    .instant_cost {
+        background: #ee4d4f;
+        color: #fff;
+        font-size: 16px;
+        width: 80%;
+        text-align: center;
+        height: 40px;
+        line-height: 40px;
+        border-radius: 4px;
+        display: block;
+        margin: 20px auto 10px;
+        border: none;
+        font-family: '微软雅黑';
+        letter-spacing: 1px;
+    }
+
+    .game_cost_box_money {
+        display: block;
+        padding: 10px 0;
+        font-size: 22px;
+        background: #ECECEC;
+        color: #333;
+        border-bottom: 1px solid #D7D7D7;
+        border-top: 1px solid #D7D7D7;
+    }
+
+    .plh{line-height: 51px;}
+
+</style>
+<body>
+<div class="d-none" id="main_vue">
+    <iframe src="test.html" scrolling="no" width="100%" height="100%" frameborder="0" marginwidth="0" marginheight="0" class="myiframe" id="game_if">
+    </iframe>
+
+    <div class="layer" v-if="showPay">
+        <div class="cd-popup-container-cost">
+          <div class="cus-row" style="border-bottom: 1px #e4e4e4 solid;padding: 0 20px;">
+              <div class="cus-row-col-2"></div>
+              <div class="cus-row-col-8 in-bl-v-m" style="line-height: 50px;font-size: 17px;color:#010101;">确定支付方式</div>
+              <div class="cus-row-col-2 in-bl-v-m t-al-r"><img src="image/pay_close.png" style="width: 16px;height: 16px;" v-on:click="closePay"/></div>
+          </div>
+          <div class="cus-row" style="border-bottom: 1px #e4e4e4 solid;">
+              <div class="cus-row-12 game_cost_box_money" style="line-height: 29px;">￥99.99</div>
+          </div>
+          <div class="cus-row" style="border-bottom: 1px #e4e4e4 solid;padding: 0 20px;">
+              <div class="cus-row-col-7" style="text-align: left;">
+                  <img src="image/pay_wx.png" style="width: 28px;height: 28px;margin-right: 5px;" class="in-bl-v-m"/>
+                  <div class="in-bl" style="line-height: 51px;">微信支付</div>
+              </div>
+              <div class="cus-row-col-5 in-bl-v-m t-al-r">
+                  <img src="image/choose_s.png" style="width: 20px;height: 20px;"/>
+              </div>
+          </div>
+
+          <a class="instant_cost">立即支付</a>
+          <p class="t-al-c">客服QQ:12345678</p>
+        </div>
+    </div>
+</div>
+
+
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/amazeui.js"></script>
+<script src="js/vue.js"></script>
+<script>
+
+    window.addEventListener('message',function(e){
+        //弹出支付
+        mainVue.doPay();
+    });
+
+    var mainVue = new Vue(
+        {
+            el:"#main_vue",
+            data:{showPay:0},
+            created:function()
+            {
+                //要去判断是否登录，没登录的话要去登录哟
+
+                $('.d-none').removeClass('d-none');
+            },
+            methods:{
+                closePay:function()
+                {
+                    this.showPay = 0;
+                },
+                doPay:function()
+                {
+                    this.showPay = 1;
+                }
+            }
+        }
+    );
+</script>
+</html>
