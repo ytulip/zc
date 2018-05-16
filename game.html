@@ -124,12 +124,17 @@
 <script src="js/jquery.min.js"></script>
 <script src="js/amazeui.js"></script>
 <script src="js/vue.js"></script>
+<script src="js/vue-router.js"></script>
 <script>
 
     window.addEventListener('message',function(e){
         //弹出支付
         mainVue.doPay();
     });
+
+    function requestVal(name){
+        return decodeURIComponent((new RegExp('[?|&]'+name+'='+'([^&;]+?)(&|#|;|$)').exec(location.href)||[,""])[1].replace(/\+/g,'%20'))||null;
+    }
 
     var mainVue = new Vue(
         {
@@ -138,6 +143,11 @@
             created:function()
             {
                 //要去判断是否登录，没登录的话要去登录哟
+                var code = requestVal('code');
+                if( !code )
+                {
+                    location.href = 'http://h5.1718g.com/ylgame/login/queryloginurl?loginType=wxapp';
+                }
 
                 $('.d-none').removeClass('d-none');
             },
