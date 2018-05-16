@@ -101,7 +101,7 @@
               <div class="cus-row-col-2 in-bl-v-m t-al-r"><img src="image/pay_close.png" style="width: 16px;height: 16px;" v-on:click="closePay"/></div>
           </div>
           <div class="cus-row" style="border-bottom: 1px #e4e4e4 solid;">
-              <div class="cus-row-12 game_cost_box_money" style="line-height: 29px;">￥99.99</div>
+              <div class="cus-row-12 game_cost_box_money" style="line-height: 29px;">￥{{showPayPrice}}</div>
           </div>
           <div class="cus-row" style="border-bottom: 1px #e4e4e4 solid;padding: 0 20px;">
               <div class="cus-row-col-7" style="text-align: left;">
@@ -134,7 +134,7 @@
     var mainVue = new Vue(
         {
             el:"#main_vue",
-            data:{showPay:0},
+            data:{showPay:0,showPayPrice:0.00,platformNo:'P152639416960211'},
             created:function()
             {
                 //要去判断是否登录，没登录的话要去登录哟
@@ -148,7 +148,31 @@
                 },
                 doPay:function()
                 {
-                    this.showPay = 1;
+
+                    /**
+                     * 调用支付查询接口
+                     * @type {number}
+                     */
+                    $.ajax({
+                        url:'http://8xkir4.natappfree.cc/ylgame/api/pay/queryDevice?platformNo=P152639416960211',
+                        async:false,
+                        dataType:'json',
+                        success:function(data)
+                        {
+//                            data = JSON.parse('{"data":{"amount":"223.00","activeSys":"2","sys":"2","device":"1"},"code":"0000","msg":"请求成功"}');
+//                            console.log(data);
+//
+//                            this.showPay = 1;
+                        },
+                        error:function()
+                        {
+                            data = JSON.parse('{"data":{"amount":"223.00","activeSys":"2","sys":"2","device":"1"},"code":"0000","msg":"请求成功"}');
+                            console.log(data);
+                            mainVue.showPayPrice = data.data.amount;
+                            mainVue.showPay = 1;
+                        }
+                    });
+
                 }
             }
         }
