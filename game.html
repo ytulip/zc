@@ -152,6 +152,8 @@
 
                 this.code = code;
 
+                alert('code为:' + code);
+
                 //去登录
                 $.ajax({
                     url:'http://h5.1718g.com/ylgame/login/wxlogin?code=' + this.code + '&loginType=wxapp ',
