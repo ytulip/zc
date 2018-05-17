@@ -150,6 +150,23 @@
                 }
 
                 this.code = code;
+
+                //去登录
+                $.ajax({
+                    url:'http://h5.1718g.com/ylgame/login/wxlogin?code=' + this.code + '&loginType=wxapp ',
+                    data:{},
+                    async:false,
+                    dataType:'json',
+                    success:function()
+                    {
+
+                    },
+                    error:function()
+                    {
+
+                    }
+                });
+
                 $('.d-none').removeClass('d-none');
             },
             methods:{
