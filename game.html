@@ -157,13 +157,13 @@
                     data:{},
                     async:false,
                     dataType:'json',
-                    success:function()
+                    success:function(data)
                     {
-
+                        alert(JSON.stringify(data));
                     },
                     error:function()
                     {
-
+                        alert('网络异常');
                     }
                 });
 
