@@ -139,7 +139,7 @@
     var mainVue = new Vue(
         {
             el:"#main_vue",
-            data:{showPay:0,showPayPrice:0.00,platformNo:'P152639416960211'},
+            data:{showPay:0,showPayPrice:0.00,platformNo:'P152639416960211',code:''},
             created:function()
             {
                 //要去判断是否登录，没登录的话要去登录哟
@@ -149,6 +149,7 @@
                     location.href = 'http://h5.1718g.com/ylgame/login/queryloginurl?loginType=wxapp';
                 }
 
+                this.code = code;
                 $('.d-none').removeClass('d-none');
             },
             methods:{
